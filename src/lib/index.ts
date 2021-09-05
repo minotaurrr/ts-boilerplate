@@ -1,1 +1,1 @@
-export * from "lib/getPerson";
+export * from 'lib/getPerson';
