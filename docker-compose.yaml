@@ -1,0 +1,16 @@
+version: '3.9' # optional since v1.27.0
+services:
+  builder:
+    build:
+      context: .
+      target: deps
+  unit-test:
+    container_name: '${APP_NAME-app}-unit-test'
+    build:
+      context: .
+      target: unit-test
+  app:
+    container_name: '${APP_NAME-app}'
+    build:
+      context: .
+      target: app
