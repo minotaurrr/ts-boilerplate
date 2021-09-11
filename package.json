@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node -r tsconfig-paths/register src/index",
+    "start": "node dist/index",
+    "start:ts": "ts-node -r tsconfig-paths/register src/index",
     "build": "tsc && tsc-alias",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix",
