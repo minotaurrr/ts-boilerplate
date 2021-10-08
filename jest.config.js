@@ -11,4 +11,5 @@ module.exports = {
   modulePaths: [compilerOptions.baseUrl],
   moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths),
   testMatch: ['**/?(*.)+(spec|test).ts'],
+  maxWorkers: 1,
 };
