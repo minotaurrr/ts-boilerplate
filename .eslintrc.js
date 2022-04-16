@@ -1,8 +1,13 @@
 module.exports = {
   root: true,
   settings: {
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts', '.tsx'],
+    },
     'import/resolver': {
-      typescript: {},
+      typescript: {
+        alwaysTryTypes: true,
+      },
     },
   },
   env: {
@@ -28,8 +33,10 @@ module.exports = {
   plugins: ['prettier', '@typescript-eslint', 'jest', 'import'],
   rules: {
     'prettier/prettier': 'error',
+    'import/no-unresolved': 'error',
     'import/prefer-default-export': 'off',
     'import/extensions': ['error', 'ignorePackages', { js: 'never', ts: 'never' }],
     '@typescript-eslint/explicit-module-boundary-types': 'off',
+    'no-multiple-empty-lines': 'error',
   },
 };
