@@ -13,8 +13,10 @@ describe('Error Handler', () => {
 
   it('should return an error', () => {
     const mockJson = jest.fn();
+
     res = { json: mockJson };
     const error = new TypeError('some error');
+
     errorHandler(error, req as Request, res as Response, next);
     expect(mockJson).toHaveBeenCalledWith({
       error,

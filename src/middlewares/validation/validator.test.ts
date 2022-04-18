@@ -24,6 +24,7 @@ describe('Joi Validator', () => {
 
     it('should return an express request handler', () => {
       const requestHandler = validateRequest(schema, 'body');
+
       expect(typeof requestHandler).toEqual('function');
       requestHandler(req as Request, res as Response, next);
       expect(next).toHaveBeenCalled();

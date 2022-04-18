@@ -2,7 +2,7 @@ import express from 'express';
 import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';
 import { UserRouter } from './routes';
-import { errorHandler } from './middlewares';
+import { errorHandler, notFoundHandler } from './middlewares';
 
 const app = express();
 const rateLimiter = rateLimit({
@@ -16,5 +16,6 @@ app.use(helmet());
 app.use('/user', UserRouter);
 
 app.use(errorHandler);
+app.use(notFoundHandler);
 
 export default app;
