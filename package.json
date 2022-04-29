@@ -15,6 +15,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/compression": "^1.7.2",
     "@types/express": "^4.17.13",
     "@types/jest": "^27.4.1",
     "@types/node": "^17.0.24",
@@ -41,6 +42,7 @@
   "dependencies": {
     "@tsconfig/node16": "^1.0.2",
     "@types/supertest": "^2.0.12",
+    "compression": "^1.7.4",
     "express": "^4.17.3",
     "express-rate-limit": "^6.3.0",
     "helmet": "^5.0.2",

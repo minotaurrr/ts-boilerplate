@@ -1,5 +1,6 @@
 import express from 'express';
 import helmet from 'helmet';
+import compression from 'compression';
 import rateLimit from 'express-rate-limit';
 import { UserRouter } from './routes';
 import { errorHandler, notFoundHandler } from './middlewares';
@@ -12,6 +13,7 @@ const rateLimiter = rateLimit({
 
 app.use(rateLimiter);
 app.use(helmet());
+app.use(compression());
 
 app.use('/user', UserRouter);
 
