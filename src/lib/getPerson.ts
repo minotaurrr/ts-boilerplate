@@ -1,3 +1,5 @@
+import { Person } from './types';
+
 export const getPerson = (name: string, age: number) => {
   const person: Person = {
     name,

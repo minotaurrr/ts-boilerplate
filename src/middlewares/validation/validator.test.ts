@@ -29,5 +29,20 @@ describe('Joi Validator', () => {
       requestHandler(req as Request, res as Response, next);
       expect(next).toHaveBeenCalled();
     });
+
+    it('should return 422 when schema does not match', () => {
+      req.body.invalid_param = { details: [{ message: 'some error' }] };
+      const mockJson = jest.fn();
+      const mockStatus = jest.fn().mockImplementation(() => ({ json: mockJson }));
+
+      res = {
+        status: mockStatus,
+      };
+      const requestHandler = validateRequest(schema, 'body');
+
+      requestHandler(req as Request, res as Response, next);
+      expect(mockStatus).toHaveBeenCalledWith(422);
+      expect(mockJson).toBeCalledWith({ error: '"invalid_param" is not allowed' });
+    });
   });
 });

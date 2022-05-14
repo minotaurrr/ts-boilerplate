@@ -1,11 +1,16 @@
 import express from 'express';
+import { UserServiceType } from 'services/user/types';
 
-const router = express.Router();
+export const UserRouter = ({ service }: { service: UserServiceType }) => {
+  const router = express.Router();
 
-router.get('/', (req, res, next) => {
-  const { username } = req.query;
+  router.get('/', (req, res) => {
+    const { username } = req.query;
 
-  res.json({ username });
-});
+    const user = service.findUserByUsername(String(username));
 
-export default router;
+    res.json(user);
+  });
+
+  return router;
+};

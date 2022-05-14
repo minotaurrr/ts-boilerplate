@@ -11,14 +11,14 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
-    "typeRoots": ["./src/types"],
     "types": ["@types/jest", "@types/node"],
     "outDir": "./dist",
     "rootDirs": ["src"],
     "paths": {
       "lib/*": ["src/lib/*"],
       "middlewares/*": ["src/middlewares/*"],
-      "routes/*": ["src/routes/*"]
+      "routes/*": ["src/routes/*"],
+      "services/*": ["src/services/*"]
     }
   },
   "exclude": ["node_modules"],
