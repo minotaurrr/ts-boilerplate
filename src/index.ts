@@ -1,5 +1,3 @@
-import { getPerson } from 'lib/getPerson';
+import app from './app';
 
-const person = getPerson('alice', 20);
-
-console.log(person);
+app.listen(8080, () => console.log('Server is open'));

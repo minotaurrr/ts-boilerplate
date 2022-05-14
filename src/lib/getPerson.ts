@@ -4,5 +4,6 @@ export const getPerson = (name: string, age: number) => {
     age,
     description: `${name} is ${age} years old`,
   };
+
   return person;
 };
