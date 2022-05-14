@@ -1,3 +1,7 @@
-import UserRouter from './router';
+import { UserService } from 'services/user';
+import { UserRouter } from './router';
 
-export { UserRouter };
+const service = UserService();
+const router = UserRouter({ service });
+
+export { router as UserRouter };
