@@ -3,7 +3,7 @@ services:
   builder:
     build:
       context: .
-      target: deps
+      target: build
   unit-test:
     container_name: '${APP_NAME-app}-unit-test'
     build:
